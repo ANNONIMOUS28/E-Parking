@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+.header {
+
+    width: 100%;
+    max-width: 400px;
+
+    margin: 20px auto;
+
+    padding: 10px;
+
+    background-color: white;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-reservas {
+
+    width: 100px;
+    height: 35px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #1e3a8a;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* CONTENEDOR */
+
+.container-disponibilidad {
+
+    width: 100%;
+    max-width: 400px;
+
+    min-height: 500px;
+
+    margin: 0 auto 20px;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+/* TITULOS */
+
+.disponibilidad-title {
+
+    font-size: 28px;
+    color: #1e3a8a;
+}
+
+.disponibilidad-image {
+
+    width: 80px;
+    height: 80px;
+}
+
+/* CIRCULO */
+
+.circulo-verde,
+.circulo-amarillo,
+.circulo-rojo {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+}
+
+.circulo-verde {
+
+    background-color: #43ad47;
+}
+
+.circulo-amarillo {
+
+    background-color: #facc15;
+}
+
+.circulo-rojo {
+
+    background-color: #e53935;
+}
+
+/* TEXTO */
+
+.texto-cupos {
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* BOTONES */
+
+.contenedor-botones {
+
+    display: flex;
+    gap: 15px;
+}
+
+.btn-actualizar,
+.btn-volver {
+
+    width: 120px;
+    height: 45px;
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-actualizar {
+
+    background-color: #43ad47;
+}
+
+.btn-volver {
+
+    background-color: #1e3a8a;
+}
+
+/* FOOTER */
+
+.footer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 20px;
+
+    background-color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .header,
+    .container-disponibilidad {
+
+        width: 95%;
+    }
+
+    .contenedor-botones {
+
+        flex-direction: column;
+    }
+}
