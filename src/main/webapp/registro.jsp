@@ -52,7 +52,7 @@
         <section class="container-registro">
 
             <h1 class="registro-title">
-                Registro de Usuario
+                Registro de Usuario.
             </h1>
 
             <img src="img/icono-registro.png"
@@ -150,7 +150,7 @@
 
                 ¿Ya tienes cuenta?
 
-                <a href="login.html">
+                <a href="login.jsp">
                     Inicia sesión
                 </a>
 

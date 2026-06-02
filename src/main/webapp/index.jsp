@@ -34,7 +34,7 @@
         <nav>
 
             <button class="btn-login"
-                    onclick="window.location.href='login.jsp'">
+                    id="btn-login">
 
                 Login
 
@@ -67,14 +67,14 @@
             <div class="contenedor-botones">
 
                 <button class="btn-principal"
-                        onclick="window.location.href='login.jsp'">
+                        id="btn-ir-login">
 
                     Iniciar Sesión
 
                 </button>
 
                 <button class="btn-secundario"
-                        onclick="window.location.href='registro.jsp'">
+                        id="btn-ir-registro">
 
                     Registrarse
 
@@ -95,10 +95,12 @@
              width="50">
 
         <p>
-            © 2026 eParking
+             © 2026 eParking
         </p>
 
     </footer>
+
+    <script src="js/index.js"></script>
 
 </body>
 

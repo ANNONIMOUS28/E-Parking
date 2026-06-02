@@ -17,7 +17,7 @@ document.getElementById('numero-cupos');
 
 btnReservas.addEventListener('click', function () {
 
-    window.location.href = 'reservas.html';
+    window.location.href = 'reservas.jsp';
 
 });
 
@@ -25,7 +25,7 @@ btnReservas.addEventListener('click', function () {
 
 btnVolver.addEventListener('click', function () {
 
-    window.location.href = 'login.html';
+    window.location.href = 'login.jsp';
 
 });
 

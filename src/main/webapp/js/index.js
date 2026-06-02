@@ -1,39 +1,30 @@
 const btnLogin =
-document.getElementById('btn-login');
-
-const btnRegistro =
-document.getElementById('btn-registro');
+    document.getElementById('btn-login');
 
 const btnIrLogin =
-document.getElementById('btn-ir-login');
+    document.getElementById('btn-ir-login');
 
 const btnIrRegistro =
-document.getElementById('btn-ir-registro');
+    document.getElementById('btn-ir-registro');
 
 /* IR LOGIN */
 
 btnLogin.addEventListener('click', function () {
 
-    window.location.href = 'login.html';
+    window.location.href = 'login.jsp';
 
 });
 
 btnIrLogin.addEventListener('click', function () {
 
-    window.location.href = 'login.html';
+    window.location.href = 'login.jsp';
 
 });
 
 /* IR REGISTRO */
 
-btnRegistro.addEventListener('click', function () {
-
-    window.location.href = 'registro.html';
-
-});
-
 btnIrRegistro.addEventListener('click', function () {
 
-    window.location.href = 'registro.html';
+    window.location.href = 'registro.jsp';
 
 });

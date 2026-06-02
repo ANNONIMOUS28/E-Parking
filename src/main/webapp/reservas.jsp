@@ -12,7 +12,7 @@
     <title>eParking - Reservas</title>
 
     <link rel="stylesheet"
-          href="reservas.css">
+          href="css/reservas.css">
 
 </head>
 
@@ -145,7 +145,7 @@
 
     </footer>
 
-    <script src="reservas.js"></script>
+    <script src="js/reservas.js"></script>
 
 </body>
 
