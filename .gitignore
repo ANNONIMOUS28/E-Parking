@@ -1,0 +1,11 @@
+# Build output
+target/
+*.class
+
+# IDE configurations
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+*.log
