@@ -1,26 +1,44 @@
-const btnRegistro = document.getElementById("btn-registrar");
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("formulario-registro");
+    const alertaError = document.getElementById("alerta-error");
+    const alertaExito = document.getElementById("alerta-exito");
 
-btnRegistro.addEventListener("click", function (evento) {
-  evento.preventDefault();
+    formulario.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+        alertaError.style.display = "none";
+        alertaExito.style.display = "none";
 
-  const nombreCompleto = document.getElementById("nombre").value;
-  const identificacion = document.getElementById("identificacion").value;
-  const telefono = document.getElementById("telefono").value;
-  const correo = document.getElementById("correo").value;
-  const contraseña = document.getElementById("password").value;
-  const confirmarContraseña = document.getElementById("confirmar-password").value;
+        const nombre = document.getElementById("nombre").value.trim();
+        const identificacion = document.getElementById("identificacion").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmarPassword = document.getElementById("confirmar-password").value;
 
-  if (
-    nombreCompleto === "" ||
-    identificacion === "" ||
-    telefono === "" ||
-    correo === "" ||
-    contraseña === "" ||
-    confirmarContraseña === ""
-  ) {
-    alert("completa todos los campos");
-  } else {
-    alert("registro exitoso");
-    window.location.href = "index.jsp";
-  }
+        if (password !== confirmarPassword) {
+            alertaError.textContent = "Las contraseñas no coinciden.";
+            alertaError.style.display = "block";
+            return;
+        }
+
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        usuarios.push({
+            nombre: nombre,
+            identificacion: identificacion,
+            telefono: telefono,
+            correo: correo,
+            password: password
+        });
+
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+        localStorage.setItem("registroExitoso", "¡Registro exitoso! Por favor, inicia sesión con tus datos.");
+
+        alertaExito.textContent = "¡Registro completado con éxito! Redirigiendo...";
+        alertaExito.style.display = "block";
+
+        setTimeout(function () {
+            window.location.href = "login.jsp";
+        }, 1000);
+    });
 });

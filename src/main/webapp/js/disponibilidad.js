@@ -1,70 +1,38 @@
-const btnReservas =
-document.getElementById('btn-reservas');
+document.addEventListener("DOMContentLoaded", function () {
+    const btnReservas = document.getElementById('btn-reservas');
+    const btnActualizar = document.getElementById('btn-actualizar');
+    const btnVolver = document.getElementById('btn-volver');
+    const estadoCirculo = document.getElementById('estado-circulo');
+    const numeroCupos = document.getElementById('numero-cupos');
 
-const btnActualizar =
-document.getElementById('btn-actualizar');
+    function actualizarCupos() {
+        const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+        const totalCupos = 30;
+        const cupos = Math.max(0, totalCupos - reservas.length);
 
-const btnVolver =
-document.getElementById('btn-volver');
+        numeroCupos.textContent = cupos;
 
-const estadoCirculo =
-document.getElementById('estado-circulo');
-
-const numeroCupos =
-document.getElementById('numero-cupos');
-
-/* IR A RESERVAS */
-
-btnReservas.addEventListener('click', function () {
-
-    window.location.href = 'reservas.jsp';
-
-});
-
-/* VOLVER LOGIN */
-
-btnVolver.addEventListener('click', function () {
-
-    window.location.href = 'login.jsp';
-
-});
-
-/* ACTUALIZAR DISPONIBILIDAD */
-
-btnActualizar.addEventListener('click', function () {
-
-    let cupos =
-    Math.floor(Math.random() * 31);
-
-    numeroCupos.textContent = cupos;
-
-    /* CAMBIO DE COLOR */
-
-    if (cupos > 15) {
-
-        estadoCirculo.className =
-        'circulo-verde';
-
+        if (cupos > 15) {
+            estadoCirculo.className = 'circulo-verde';
+        } else if (cupos > 5) {
+            estadoCirculo.className = 'circulo-amarillo';
+        } else {
+            estadoCirculo.className = 'circulo-rojo';
+        }
     }
 
-    else if (cupos > 5) {
+    actualizarCupos();
 
-        estadoCirculo.className =
-        'circulo-amarillo';
+    btnReservas.addEventListener('click', function () {
+        window.location.href = 'reservas.jsp';
+    });
 
-    }
+    btnVolver.addEventListener('click', function () {
+        localStorage.removeItem('usuarioLogueado');
+        window.location.href = 'login.jsp';
+    });
 
-    else {
-
-        estadoCirculo.className =
-        'circulo-rojo';
-    }
-
+    btnActualizar.addEventListener('click', function () {
+        actualizarCupos();
+    });
 });
-
-
-
- 
-
-
-

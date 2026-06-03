@@ -200,8 +200,33 @@ input:focus {
     color: #64748b;
 }
 
+/* ALERTAS */
+.alerta {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.alerta-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.alerta-exito {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
     .header,
     .container-login {
         width: calc(100% - 20px);
