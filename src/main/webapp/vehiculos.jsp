@@ -1,16 +1,21 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
 
+    <!-- Configuración de codificación -->
     <meta charset="UTF-8">
 
+    <!-- Adaptación a dispositivos móviles -->
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
+    <!-- Título de la pestaña -->
     <title>Vehículos | E-Parking</title>
 
+    <!-- Hoja de estilos del módulo vehículos -->
     <link rel="stylesheet"
           href="css/vehiculos.css">
 
@@ -18,12 +23,12 @@
 
 <body>
 
-    <!-- HEADER -->
-
+    <!-- HEADER: Encabezado principal -->
     <header class="header">
 
         <div class="logo">
 
+            <!-- Logo del sistema -->
             <img src="img/logo-eparking.jpeg"
                  alt="logo eparking"
                  width="110"
@@ -33,12 +38,10 @@
 
     </header>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-
+    <!-- CONTENEDOR PRINCIPAL DE LA PÁGINA -->
     <main class="container-vehiculos">
 
-        <!-- TITULO -->
-
+        <!-- TÍTULO PRINCIPAL -->
         <div class="titulo-container">
 
             <h1 class="titulo">
@@ -55,8 +58,7 @@
 
         </div>
 
-        <!-- BOTON VOLVER -->
-
+        <!-- BOTÓN PARA VOLVER AL MENÚ PRINCIPAL -->
         <div class="contenedor-volver">
 
             <a href="menu-principal.jsp"
@@ -68,10 +70,10 @@
 
         </div>
 
-        <!-- ACCIONES -->
-
+        <!-- BOTONES DE ACCIONES RÁPIDAS -->
         <div class="acciones-rapidas">
 
+            <!-- Botón de búsqueda -->
             <button class="btn-secundario"
                     id="btnBuscar">
 
@@ -79,6 +81,7 @@
 
             </button>
 
+            <!-- Botón exportar PDF -->
             <button class="btn-secundario"
                     id="btnExportar">
 
@@ -88,22 +91,22 @@
 
         </div>
 
-        <!-- BUSQUEDA -->
-
+        <!-- BARRA DE BÚSQUEDA -->
         <div class="busqueda-container">
 
             <input type="text"
                    id="inputBuscar"
                    placeholder="Buscar por placa...">
 
+            <!-- Contenedor de resultados de búsqueda -->
             <div id="resultadoBusqueda"></div>
 
         </div>
 
-        <!-- ESTADISTICAS -->
-
+        <!-- SECCIÓN DE ESTADÍSTICAS -->
         <div class="estadisticas">
 
+            <!-- Vehículos registrados -->
             <div class="card-estadistica">
 
                 <h3>2</h3>
@@ -112,6 +115,7 @@
 
             </div>
 
+            <!-- Espacios disponibles -->
             <div class="card-estadistica">
 
                 <h3>45</h3>
@@ -120,6 +124,7 @@
 
             </div>
 
+            <!-- Reservas activas -->
             <div class="card-estadistica">
 
                 <h3>15</h3>
@@ -130,20 +135,16 @@
 
         </div>
 
-        <!-- FORMULARIO -->
-
+        <!-- FORMULARIO DE REGISTRO DE VEHÍCULOS -->
         <form class="formulario-vehiculos"
               action="VehiculoServlet"
               method="post">
 
-            <!-- PLACA -->
-
+            <!-- CAMPO PLACA -->
             <div class="grupo-input">
 
                 <label for="placa">
-
                     Placa
-
                 </label>
 
                 <input type="text"
@@ -154,14 +155,11 @@
 
             </div>
 
-            <!-- TIPO -->
-
+            <!-- CAMPO TIPO DE VEHÍCULO -->
             <div class="grupo-input">
 
                 <label for="tipoVehiculo">
-
                     Tipo de Vehículo
-
                 </label>
 
                 <select id="tipoVehiculo"
@@ -169,41 +167,30 @@
                         required>
 
                     <option value="">
-
                         Seleccione
-
                     </option>
 
                     <option value="Carro">
-
                         Carro
-
                     </option>
 
                     <option value="Moto">
-
                         Moto
-
                     </option>
 
                     <option value="Bicicleta">
-
                         Bicicleta
-
                     </option>
 
                 </select>
 
             </div>
 
-            <!-- COLOR -->
-
+            <!-- CAMPO COLOR -->
             <div class="grupo-input">
 
                 <label for="color">
-
                     Color
-
                 </label>
 
                 <input type="text"
@@ -214,14 +201,11 @@
 
             </div>
 
-            <!-- PROPIETARIO -->
-
+            <!-- CAMPO PROPIETARIO -->
             <div class="grupo-input">
 
                 <label for="propietario">
-
                     Propietario
-
                 </label>
 
                 <input type="text"
@@ -232,8 +216,7 @@
 
             </div>
 
-            <!-- BOTON -->
-
+            <!-- BOTÓN GUARDAR -->
             <button type="submit"
                     class="btn-guardar">
 
@@ -243,8 +226,7 @@
 
         </form>
 
-        <!-- TABLA -->
-
+        <!-- TABLA DE VEHÍCULOS REGISTRADOS -->
         <div class="tabla-container">
 
             <table>
@@ -264,6 +246,7 @@
 
                 <tbody>
 
+                    <!-- Registro ejemplo 1 -->
                     <tr>
 
                         <td>ABC123</td>
@@ -273,6 +256,7 @@
 
                     </tr>
 
+                    <!-- Registro ejemplo 2 -->
                     <tr>
 
                         <td>XYZ789</td>
@@ -290,19 +274,22 @@
 
     </main>
 
-    <!-- FOOTER -->
-
+    <!-- FOOTER: Pie de página -->
     <footer class="app-footer">
 
-        <img src="img/Logo-software.jpeg" alt="Logo software" width="50" height="45">
+        <!-- Logo del software -->
+        <img src="img/Logo-software.jpeg"
+             alt="Logo software"
+             width="50"
+             height="45">
 
-            <p>
-                © 2026 eParking
-            </p>
-
+        <p>
+            © 2026 eParking
+        </p>
 
     </footer>
 
+    <!-- Archivo JavaScript del módulo vehículos -->
     <script src="js/vehiculos.js"></script>
 
 </body>

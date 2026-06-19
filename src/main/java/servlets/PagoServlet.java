@@ -10,6 +10,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+/**
+ * Servlet encargado de procesar el pago de una reserva en el sistema E-Parking
+ */
 @WebServlet("/PagoServlet")
 public class PagoServlet extends HttpServlet {
 
@@ -20,32 +23,23 @@ public class PagoServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Permitir caracteres especiales en la petición
         request.setCharacterEncoding("UTF-8");
 
-        // Método de pago seleccionado
-        String metodoPago =
-                request.getParameter("metodoPago");
+        // Método de pago seleccionado por el usuario
+        String metodoPago = request.getParameter("metodoPago");
 
-        // Sesión
-        HttpSession session =
-                request.getSession();
+        // Obtener la sesión actual del usuario
+        HttpSession session = request.getSession();
 
-        String vehiculo =
-                (String) session.getAttribute("vehiculo");
+        // Recuperar datos de la reserva almacenados en sesión
+        String vehiculo = (String) session.getAttribute("vehiculo");
+        String cupo = (String) session.getAttribute("cupo");
+        String fecha = (String) session.getAttribute("fecha");
+        String hora = (String) session.getAttribute("hora");
+        Double total = (Double) session.getAttribute("total");
 
-        String cupo =
-                (String) session.getAttribute("cupo");
-
-        String fecha =
-                (String) session.getAttribute("fecha");
-
-        String hora =
-                (String) session.getAttribute("hora");
-
-        Double total =
-                (Double) session.getAttribute("total");
-
-        // Validación básica
+        // Validación básica del método de pago
         if (metodoPago == null || metodoPago.isEmpty()) {
 
             response.getWriter().write(
@@ -55,7 +49,7 @@ public class PagoServlet extends HttpServlet {
             return;
         }
 
-        // Simulación de procesamiento
+        // Simulación del procesamiento del pago (no integración real con pasarela)
         System.out.println("=== PROCESANDO PAGO ===");
         System.out.println("Vehículo: " + vehiculo);
         System.out.println("Cupo: " + cupo);
@@ -64,16 +58,12 @@ public class PagoServlet extends HttpServlet {
         System.out.println("Total: " + total);
         System.out.println("Método de pago: " + metodoPago);
 
-        // Estado pago
-        session.setAttribute(
-                "estadoPago",
-                "APROBADO"
-        );
+        // Guardar estado del pago en sesión
+        session.setAttribute("estadoPago", "APROBADO");
 
+        // Respuesta tipo texto plano al cliente
         response.setContentType("text/plain");
 
-        response.getWriter().write(
-                "PAGO EXITOSO"
-        );
+        response.getWriter().write("PAGO EXITOSO");
     }
 }

@@ -1,166 +1,190 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 
-    <!DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8">
+    <!-- Configuración de codificación de caracteres -->
+    <meta charset="UTF-8">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permite una correcta visualización en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>eParking - Registro</title>
+    <!-- Título mostrado en la pestaña del navegador -->
+    <title>eParking - Registro</title>
 
-        <link rel="stylesheet" href="css/registro.css">
+    <!-- Hoja de estilos de la página de registro -->
+    <link rel="stylesheet" href="css/registro.css">
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <!-- HEADER -->
+    <!-- Encabezado principal -->
+    <header class="header">
 
-        <header class="header">
+        <!-- Logo institucional -->
+        <div class="logo">
 
-            <div class="logo">
+            <img src="img/logo-eparking.jpeg" alt="Logo eParking" width="110" height="32">
 
-                <img src="img/logo-eparking.jpeg" alt="Logo eParking" width="110" height="32">
+        </div>
 
-            </div>
+        <!-- Menú de navegación -->
+        <nav>
 
-            <nav>
+            <!-- Botón para dirigirse al inicio de sesión -->
+            <button type="button" class="btn-login" onclick="window.location.href='login.jsp'">
 
-                <button type="button" class="btn-login" onclick="window.location.href='login.jsp'">
+                Login
 
-                    Login
+            </button>
+
+        </nav>
+
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Contenedor del formulario de registro -->
+        <section class="container-registro">
+
+            <!-- Título principal -->
+            <h1 class="registro-title">
+                Registro de Usuario
+            </h1>
+
+            <!-- Imagen representativa del registro -->
+            <img src="img/icono-registro.png" alt="Icono Registro" class="registro-image">
+
+            <!-- Subtítulo informativo -->
+            <h2 class="registro-subtitle">
+                Completa tus datos
+            </h2>
+
+            <!-- Sección de mensajes dinámicos -->
+            <% String msg = request.getParameter("msg"); %>
+
+            <!-- Mensaje mostrado cuando el registro es exitoso -->
+            <% if ("ok".equals(msg)) { %>
+                <div class="mensaje-exito">✅ Registro exitoso</div>
+            <% } %>
+
+            <!-- Mensaje mostrado cuando ocurre un error en el registro -->
+            <% if ("error".equals(msg)) { %>
+                <div class="mensaje-error">❌ Error en registro</div>
+            <% } %>
+
+            <!-- Formulario de registro de usuario -->
+            <form id="formulario-registro"
+                  class="formulario"
+                  action="RegistroServlet"
+                  method="POST">
+
+                <!-- Campo para ingresar el nombre completo -->
+                <div class="form-campo">
+
+                    <input type="text"
+                           id="nombre"
+                           name="nombre"
+                           placeholder="Nombre completo">
+
+                </div>
+
+                <!-- Campo para ingresar la identificación -->
+                <div class="form-campo">
+
+                    <input type="text"
+                           id="identificacion"
+                           name="identificacion"
+                           placeholder="Identificación">
+
+                </div>
+
+                <!-- Campo para ingresar el teléfono -->
+                <div class="form-campo">
+
+                    <input type="text"
+                           id="telefono"
+                           name="telefono"
+                           placeholder="Teléfono">
+
+                </div>
+
+                <!-- Campo para ingresar el correo electrónico -->
+                <div class="form-campo">
+
+                    <input type="email"
+                           id="correo"
+                           name="correo"
+                           placeholder="Correo electrónico">
+
+                </div>
+
+                <!-- Campo para ingresar la contraseña -->
+                <div class="form-campo">
+
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Contraseña">
+
+                </div>
+
+                <!-- Campo para confirmar la contraseña -->
+                <div class="form-campo">
+
+                    <input type="password"
+                           id="confirmar-password"
+                           name="confirmarPassword"
+                           placeholder="Confirmar contraseña">
+
+                </div>
+
+                <!-- Botón para enviar el formulario -->
+                <button type="submit"
+                        class="btn-registrar"
+                        id="btn-registrar">
+
+                    Registrarse
 
                 </button>
 
-            </nav>
+            </form>
 
-        </header>
+            <!-- Enlace para usuarios que ya tienen cuenta -->
+            <p class="texto-login">
 
-        <!-- MAIN -->
+                ¿Ya tienes cuenta?
 
-        <main>
+                <a href="login.jsp">
+                    Inicia sesión
+                </a>
 
-            <section class="container-registro">
-
-                <h1 class="registro-title">
-                    Registro de Usuario
-                </h1>
-
-                <img src="img/icono-registro.png" alt="Icono Registro" class="registro-image">
-
-                <h2 class="registro-subtitle">
-                    Completa tus datos
-                </h2>
-
-                <!-- MENSAJES -->
-                 
-                <% String msg=request.getParameter("msg"); %>
-
-                    <% if ("ok".equals(msg)) { %>
-                        <div class="mensaje-exito">✅ Registro exitoso</div>
-                        <% } %>
-
-                            <% if ("error".equals(msg)) { %>
-                                <div class="mensaje-error">❌ Error en registro</div>
-                                <% } %>
-                                    <!-- FORMULARIO -->
-
-                                    <form id="formulario-registro" class="formulario" action="RegistroServlet"
-                                        method="POST">
-
-                                        <!-- NOMBRE -->
-
-                                        <div class="form-campo">
-
-                                            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
-
-                                        </div>
-
-                                        <!-- IDENTIFICACION -->
-
-                                        <div class="form-campo">
-
-                                            <input type="text" id="identificacion" name="identificacion"
-                                                placeholder="Identificación">
-
-                                        </div>
-
-                                        <!-- TELEFONO -->
-
-                                        <div class="form-campo">
-
-                                            <input type="text" id="telefono" name="telefono" placeholder="Teléfono">
-
-                                        </div>
-
-                                        <!-- CORREO -->
-
-                                        <div class="form-campo">
-
-                                            <input type="email" id="correo" name="correo"
-                                                placeholder="Correo electrónico">
-
-                                        </div>
-
-                                        <!-- PASSWORD -->
-
-                                        <div class="form-campo">
-
-                                            <input type="password" id="password" name="password"
-                                                placeholder="Contraseña">
-
-                                        </div>
-
-                                        <!-- CONFIRMAR PASSWORD -->
-
-                                        <div class="form-campo">
-
-                                            <input type="password" id="confirmar-password" name="confirmarPassword"
-                                                placeholder="Confirmar contraseña">
-
-                                        </div>
-
-                                        <!-- BOTON -->
-
-                                        <button type="submit" class="btn-registrar" id="btn-registrar">
-
-                                            Registrarse
-
-                                        </button>
-
-                                    </form>
-
-                                    <p class="texto-login">
-
-                                        ¿Ya tienes cuenta?
-
-                                        <a href="login.jsp">
-                                            Inicia sesión
-                                        </a>
-
-                                    </p>
-
-            </section>
-
-        </main>
-
-        <!-- FOOTER -->
-
-        <footer class="footer">
-
-            <img src="img/Logo-software.jpeg" alt="Logo software" width="50" height="45">
-
-            <p>
-                © 2026 eParking
             </p>
 
-        </footer>
+        </section>
 
-        <script src="js/registro.js"></script>
+    </main>
 
-    </body>
+    <!-- Pie de página -->
+    <footer class="footer">
 
-    </html>
+        <!-- Logo representativo del proyecto -->
+        <img src="img/Logo-software.jpeg" alt="Logo software" width="50" height="45">
+
+        <!-- Información de derechos de autor -->
+        <p>
+            © 2026 eParking
+        </p>
+
+    </footer>
+
+    <!-- Archivo JavaScript encargado de las validaciones del formulario -->
+    <script src="js/registro.js"></script>
+
+</body>
+
+</html>

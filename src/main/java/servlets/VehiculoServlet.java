@@ -9,12 +9,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet encargado de registrar y gestionar vehículos en el sistema E-Parking
+ * (Actualmente usa una lista temporal en memoria)
+ */
 @WebServlet("/VehiculoServlet")
 public class VehiculoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    // LISTA TEMPORAL
+    // LISTA TEMPORAL: almacena vehículos en memoria (no persistente)
     private static ArrayList<String[]> listaVehiculos = new ArrayList<>();
 
     @Override
@@ -22,27 +26,34 @@ public class VehiculoServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
-        // RECIBIR DATOS
+        // =========================
+        // CAPTURA DE DATOS
+        // =========================
+
         String placa = request.getParameter("placa");
 
-        String tipoVehiculo =
-                request.getParameter("tipoVehiculo");
+        String tipoVehiculo = request.getParameter("tipoVehiculo");
 
-        String color =
-                request.getParameter("color");
+        String color = request.getParameter("color");
 
-        String propietario =
-                request.getParameter("propietario");
+        String propietario = request.getParameter("propietario");
 
-        // VALIDACION SIMPLE
+        // =========================
+        // VALIDACIÓN BÁSICA
+        // =========================
+
         if (placa == null || placa.isEmpty()) {
 
+            // Si no hay placa, se redirige sin procesar
             response.sendRedirect("vehiculos.jsp");
 
             return;
         }
 
-        // GUARDAR VEHICULO
+        // =========================
+        // CREACIÓN DEL VEHÍCULO
+        // =========================
+
         String[] vehiculo = {
                 placa,
                 tipoVehiculo,
@@ -50,15 +61,22 @@ public class VehiculoServlet extends HttpServlet {
                 propietario
         };
 
+        // Guardar vehículo en la lista temporal
         listaVehiculos.add(vehiculo);
 
-        // ENVIAR LISTA
+        // =========================
+        // ENVÍO DE DATOS A LA VISTA
+        // =========================
+
         request.setAttribute(
                 "vehiculos",
                 listaVehiculos
         );
 
-        // REDIRIGIR
+        // =========================
+        // REDIRECCIÓN A JSP
+        // =========================
+
         request.getRequestDispatcher(
                 "vehiculos.jsp"
         ).forward(request, response);

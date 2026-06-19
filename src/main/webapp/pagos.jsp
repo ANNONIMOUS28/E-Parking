@@ -5,13 +5,17 @@
 
 <head>
 
+    <!-- Configuración de codificación de caracteres -->
     <meta charset="UTF-8">
 
+    <!-- Permite una correcta visualización en dispositivos móviles -->
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
+    <!-- Título mostrado en la pestaña del navegador -->
     <title>Pagos | E-Parking</title>
 
+    <!-- Hoja de estilos de la página de pagos -->
     <link rel="stylesheet"
           href="css/pagos.css">
 
@@ -19,10 +23,10 @@
 
 <body>
 
-    <!-- HEADER -->
-
+    <!-- Encabezado principal -->
     <header class="header">
 
+        <!-- Logo institucional del sistema -->
         <div class="logo">
 
             <img src="img/logo-eparking.jpeg"
@@ -34,12 +38,10 @@
 
     </header>
 
-    <!-- MAIN -->
-
+    <!-- Contenido principal -->
     <main class="container-pagos">
 
-        <!-- TITULO -->
-
+        <!-- Sección de título y descripción -->
         <div class="titulo-container">
 
             <h1 class="titulo">
@@ -56,8 +58,7 @@
 
         </div>
 
-        <!-- VOLVER -->
-
+        <!-- Botón para regresar al menú principal -->
         <div class="contenedor-volver">
 
             <a href="menu-principal.jsp"
@@ -69,8 +70,7 @@
 
         </div>
 
-        <!-- RESUMEN -->
-
+        <!-- Resumen de la reserva seleccionada -->
         <div class="resumen-pago">
 
             <h2>
@@ -81,6 +81,7 @@
 
             <div class="detalle">
 
+                <!-- Información del vehículo -->
                 <p>
 
                     <strong>Vehículo:</strong>
@@ -88,6 +89,7 @@
 
                 </p>
 
+                <!-- Cupo asignado -->
                 <p>
 
                     <strong>Cupo:</strong>
@@ -95,6 +97,7 @@
 
                 </p>
 
+                <!-- Fecha de la reserva -->
                 <p>
 
                     <strong>Fecha:</strong>
@@ -102,6 +105,7 @@
 
                 </p>
 
+                <!-- Hora de la reserva -->
                 <p>
 
                     <strong>Hora:</strong>
@@ -109,6 +113,7 @@
 
                 </p>
 
+                <!-- Valor total a pagar -->
                 <p class="total">
 
                     Total: $10.000
@@ -119,8 +124,7 @@
 
         </div>
 
-        <!-- METODOS -->
-
+        <!-- Sección para seleccionar el método de pago -->
         <div class="metodos-pago">
 
             <h2>
@@ -131,24 +135,28 @@
 
             <div class="metodos-grid">
 
+                <!-- Opción de pago con tarjeta -->
                 <div class="metodo">
 
                     💳 Tarjeta
 
                 </div>
 
+                <!-- Opción de pago con Nequi -->
                 <div class="metodo">
 
                     📱 Nequi
 
                 </div>
 
+                <!-- Opción de pago con Daviplata -->
                 <div class="metodo">
 
                     🏦 Daviplata
 
                 </div>
 
+                <!-- Opción de pago en efectivo -->
                 <div class="metodo">
 
                     💵 Efectivo
@@ -159,8 +167,7 @@
 
         </div>
 
-        <!-- BOTON PAGAR -->
-
+        <!-- Botón para confirmar el pago -->
         <button id="btnPagar"
                 class="btn-pagar">
 
@@ -168,25 +175,28 @@
 
         </button>
 
-        <!-- MENSAJE -->
-
+        <!-- Contenedor donde se mostrarán mensajes de confirmación o error -->
         <div id="mensajePago"></div>
 
     </main>
 
-    <!-- FOOTER -->
-
+    <!-- Pie de página -->
     <footer class="app-footer">
 
-        <img src="img/Logo-software.jpeg" alt="Logo software" width="50" height="45">
+        <!-- Logo representativo del proyecto -->
+        <img src="img/Logo-software.jpeg"
+             alt="Logo software"
+             width="50"
+             height="45">
 
-            <p>
-                © 2026 eParking
-            </p>
-
+        <!-- Información de derechos de autor -->
+        <p>
+            © 2026 eParking
+        </p>
 
     </footer>
 
+    <!-- Archivo JavaScript encargado de la lógica de pagos -->
     <script src="js/pagos.js"></script>
 
 </body>

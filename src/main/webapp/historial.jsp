@@ -1,182 +1,190 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 
-    <!DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8">
+    <!-- Configuración de codificación de caracteres -->
+    <meta charset="UTF-8">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permite la correcta visualización en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Historial | E-Parking</title>
+    <!-- Título mostrado en la pestaña del navegador -->
+    <title>Historial | E-Parking</title>
 
-        <link rel="stylesheet" href="css/historial.css">
+    <!-- Hoja de estilos de la página de historial -->
+    <link rel="stylesheet" href="css/historial.css">
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <!-- HEADER -->
+    <!-- Encabezado principal -->
+    <header class="header">
 
-        <header class="header">
+        <!-- Logo institucional del sistema -->
+        <div class="logo">
 
-            <div class="logo">
+            <img src="img/logo-eparking.jpeg" alt="logo" width="110" height="32">
 
-                <img src="img/logo-eparking.jpeg" alt="logo" width="110" height="32">
+        </div>
 
-            </div>
+    </header>
 
-        </header>
+    <!-- Contenido principal -->
+    <main class="container-historial">
 
-        <!-- MAIN -->
+        <!-- Sección de título y descripción -->
+        <div class="titulo-container">
 
-        <main class="container-historial">
+            <h1 class="titulo">
 
-            <!-- TITULO -->
+                📋 Historial de Reservas
 
-            <div class="titulo-container">
+            </h1>
 
-                <h1 class="titulo">
+            <p class="subtitulo">
 
-                    📋 Historial de Reservas
+                Consulta las reservas realizadas
 
-                </h1>
-
-                <p class="subtitulo">
-
-                    Consulta las reservas realizadas
-
-                </p>
-
-            </div>
-
-            <!-- VOLVER -->
-
-            <div class="contenedor-volver">
-
-                <a href="menu-principal.jsp" class="btn-volver">
-
-                    ← Volver al Menú
-
-                </a>
-
-            </div>
-
-            <!-- BUSQUEDA -->
-
-            <div class="busqueda-container">
-
-                <input type="text" id="inputBuscar" placeholder="Buscar por placa...">
-
-                <button id="btnBuscar" class="btn-buscar">
-
-                    Buscar
-
-                </button>
-
-            </div>
-
-            <!-- ESTADISTICAS -->
-
-            <div class="estadisticas">
-
-                <div class="card-estadistica">
-
-                    <h3>15</h3>
-
-                    <p>Reservas Totales</p>
-
-                </div>
-
-                <div class="card-estadistica activa">
-
-                    <h3>5</h3>
-
-                    <p>Activas</p>
-
-                </div>
-
-                <div class="card-estadistica finalizada">
-
-                    <h3>10</h3>
-
-                    <p>Finalizadas</p>
-
-                </div>
-
-            </div>
-
-            <!-- TABLA -->
-
-            <div class="tabla-container">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Fecha</th>
-                            <th>Vehículo</th>
-                            <th>Espacio</th>
-                            <th>Estado</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="tablaHistorial">
-
-                        <tr>
-
-                            <td>12/05/2026</td>
-                            <td>ABC123</td>
-                            <td>A-12</td>
-                            <td class="estado-activa">
-
-                                Activa
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>10/05/2026</td>
-                            <td>XYZ789</td>
-                            <td>B-05</td>
-                            <td class="estado-finalizada">
-
-                                Finalizada
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </main>
-
-        <!-- FOOTER -->
-
-        <footer class="app-footer">
-
-            <img src="img/Logo-software.jpeg" alt="Logo software" width="50" height="45">
-
-            <p>
-                © 2026 eParking
             </p>
 
+        </div>
 
-        </footer>
+        <!-- Enlace para regresar al menú principal -->
+        <div class="contenedor-volver">
 
-        <script src="js/historial.js"></script>
+            <a href="menu-principal.jsp" class="btn-volver">
 
-    </body>
+                ← Volver al Menú
 
-    </html>
+            </a>
+
+        </div>
+
+        <!-- Sección de búsqueda de reservas -->
+        <div class="busqueda-container">
+
+            <!-- Campo para buscar reservas por placa -->
+            <input type="text" id="inputBuscar" placeholder="Buscar por placa...">
+
+            <!-- Botón que ejecuta la búsqueda -->
+            <button id="btnBuscar" class="btn-buscar">
+
+                Buscar
+
+            </button>
+
+        </div>
+
+        <!-- Tarjetas de estadísticas del historial -->
+        <div class="estadisticas">
+
+            <!-- Total de reservas registradas -->
+            <div class="card-estadistica">
+
+                <h3>15</h3>
+
+                <p>Reservas Totales</p>
+
+            </div>
+
+            <!-- Cantidad de reservas activas -->
+            <div class="card-estadistica activa">
+
+                <h3>5</h3>
+
+                <p>Activas</p>
+
+            </div>
+
+            <!-- Cantidad de reservas finalizadas -->
+            <div class="card-estadistica finalizada">
+
+                <h3>10</h3>
+
+                <p>Finalizadas</p>
+
+            </div>
+
+        </div>
+
+        <!-- Contenedor de la tabla de historial -->
+        <div class="tabla-container">
+
+            <table>
+
+                <!-- Encabezados de la tabla -->
+                <thead>
+
+                    <tr>
+
+                        <th>Fecha</th>
+                        <th>Vehículo</th>
+                        <th>Espacio</th>
+                        <th>Estado</th>
+
+                    </tr>
+
+                </thead>
+
+                <!-- Cuerpo de la tabla con los registros -->
+                <tbody id="tablaHistorial">
+
+                    <!-- Registro de reserva activa -->
+                    <tr>
+
+                        <td>12/05/2026</td>
+                        <td>ABC123</td>
+                        <td>A-12</td>
+                        <td class="estado-activa">
+
+                            Activa
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Registro de reserva finalizada -->
+                    <tr>
+
+                        <td>10/05/2026</td>
+                        <td>XYZ789</td>
+                        <td>B-05</td>
+                        <td class="estado-finalizada">
+
+                            Finalizada
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="app-footer">
+
+        <!-- Logo representativo del proyecto -->
+        <img src="img/Logo-software.jpeg" alt="Logo software" width="50" height="45">
+
+        <!-- Información de derechos de autor -->
+        <p>
+            © 2026 eParking
+        </p>
+
+    </footer>
+
+    <!-- Archivo JavaScript encargado de las búsquedas y funcionalidades del historial -->
+    <script src="js/historial.js"></script>
+
+</body>
+
+</html>

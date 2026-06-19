@@ -13,6 +13,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+/**
+ * Servlet encargado de autenticar usuarios en el sistema E-Parking
+ */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
@@ -21,70 +24,66 @@ public class LoginServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Definir codificación para soportar caracteres especiales
         request.setCharacterEncoding("UTF-8");
 
-        String correo =
-                request.getParameter("correo");
-
-        String password =
-                request.getParameter("password");
+        // Obtener datos enviados desde el formulario de login
+        String correo = request.getParameter("correo");
+        String password = request.getParameter("password");
 
         try {
 
-            Connection conn =
-                    ConexionDB.getConnection();
+            // Obtener conexión a la base de datos
+            Connection conn = ConexionDB.getConnection();
 
-            String sql =
-                    "SELECT * FROM usuarios " +
-                    "WHERE correo=? AND password=?";
+            // Consulta para validar usuario en la base de datos
+            String sql = "SELECT * FROM usuarios WHERE correo=? AND password=?";
 
-            PreparedStatement ps =
-                    conn.prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
 
+            // Asignar parámetros a la consulta
             ps.setString(1, correo);
             ps.setString(2, password);
 
-            ResultSet rs =
-                    ps.executeQuery();
+            // Ejecutar consulta
+            ResultSet rs = ps.executeQuery();
 
+            // Si existe un usuario con esos datos
             if (rs.next()) {
 
-                HttpSession session =
-                        request.getSession();
+                // Crear sesión para el usuario autenticado
+                HttpSession session = request.getSession();
 
-                session.setAttribute(
-                        "usuario",
-                        rs.getString("nombre")
-                );
+                // Guardar nombre del usuario en sesión
+                session.setAttribute("usuario", rs.getString("nombre"));
 
-                session.setAttribute(
-                        "rol",
-                        rs.getString("rol")
-                );
+                // Guardar rol del usuario en sesión
+                session.setAttribute("rol", rs.getString("rol"));
 
-                response.sendRedirect(
-                        request.getContextPath()
-                        + "/menu-principal.jsp"
-                );
+                // Redirigir al menú principal
+                response.sendRedirect(request.getContextPath()
+                        + "/menu-principal.jsp");
 
             } else {
 
+                // Mensaje si las credenciales son incorrectas
                 response.getWriter().println(
                         "<h2>Correo o contraseña incorrectos</h2>"
                 );
             }
 
+            // Cerrar recursos de base de datos
             rs.close();
             ps.close();
             conn.close();
 
         } catch (Exception e) {
 
+            // Imprimir error en consola para depuración
             e.printStackTrace();
 
-            response.getWriter().println(
-                    "Error: " + e.getMessage()
-            );
+            // Mostrar error al cliente
+            response.getWriter().println("Error: " + e.getMessage());
         }
     }
 }
