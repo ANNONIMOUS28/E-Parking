@@ -1,0 +1,126 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+
+}
+
+.header {
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: white;
+
+}
+
+.btn-login {
+
+    background-color: #1e3a8a;
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.main {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 80vh;
+
+}
+
+.hero {
+
+    text-align: center;
+
+}
+
+.hero h1 {
+
+    font-size: 40px;
+    color: #1e3a8a;
+
+}
+
+.hero p {
+
+    font-size: 18px;
+    color: #555;
+
+}
+
+.hero-image {
+
+    width: 200px;
+    margin: 20px 0;
+
+}
+
+.contenedor-botones {
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.btn-principal,
+.btn-secundario {
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+.btn-principal {
+
+    background-color: #1e3a8a;
+    color: white;
+
+}
+
+.btn-secundario {
+
+    background-color: #43ad47;
+    color: white;
+
+}
+
+.footer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: white;
+
+    padding: 20px;
+
+}
