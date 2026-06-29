@@ -19,11 +19,11 @@ public class ConexionDB {
         try {
 
             // Cargar el driver de MySQL (Connector/J)
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
 
             // Establecer conexión con la base de datos
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/eparking?useSSL=false&serverTimezone=UTC",
+                    "jdbc:mysql://localhost:3306/eparking?useSSL=false",
                     "root",
                     ""
             );

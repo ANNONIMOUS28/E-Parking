@@ -60,30 +60,39 @@ public class LoginServlet extends HttpServlet {
                 // Guardar rol del usuario en sesión
                 session.setAttribute("rol", rs.getString("rol"));
 
+                // Cerrar recursos de base de datos
+                rs.close();
+                ps.close();
+                conn.close();
+
                 // Redirigir al menú principal
                 response.sendRedirect(request.getContextPath()
                         + "/menu-principal.jsp");
 
             } else {
 
-                // Mensaje si las credenciales son incorrectas
-                response.getWriter().println(
-                        "<h2>Correo o contraseña incorrectos</h2>"
-                );
-            }
+                // Cerrar recursos de base de datos antes del reenvío
+                rs.close();
+                ps.close();
+                conn.close();
 
-            // Cerrar recursos de base de datos
-            rs.close();
-            ps.close();
-            conn.close();
+                // Mensaje si las credenciales son incorrectas (reenvío a login.jsp)
+                request.setAttribute("error", "Correo o contraseña incorrectos");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
 
         } catch (Exception e) {
 
             // Imprimir error en consola para depuración
             e.printStackTrace();
 
-            // Mostrar error al cliente
-            response.getWriter().println("Error: " + e.getMessage());
+            // Mostrar error al cliente reenviando al login
+            request.setAttribute("error", "Error de conexión: " + e.getMessage());
+            try {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
