@@ -137,7 +137,7 @@
 
         <!-- FORMULARIO DE REGISTRO DE VEHÍCULOS -->
         <form class="formulario-vehiculos"
-              action="VehiculoServlet"
+              action="VehiculosServlet"
               method="post">
 
             <!-- CAMPO PLACA -->

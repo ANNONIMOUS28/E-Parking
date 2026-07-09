@@ -1,4 +1,4 @@
-package servlets;
+package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,7 +25,7 @@ public class ConexionDB {
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/eparking?useSSL=false&serverTimezone=UTC",
                     "root",
-                    ""
+                    "Root@1236"
             );
 
             // Mensaje si la conexión es exitosa

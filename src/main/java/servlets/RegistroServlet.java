@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -37,21 +36,21 @@ public class RegistroServlet extends HttpServlet {
             // Validación de campos obligatorios (no nulos)
             if (nombre == null || identificacion == null ||
                 telefono == null || correo == null ||
-                password == null || confirmarPassword == null) {
+                password == null || password.isEmpty() || confirmarPassword == null ||  confirmarPassword.isEmpty()) {
 
-                response.sendRedirect("registro.jsp?msg=error");
+                response.sendRedirect("login.jsp?msg=error");
                 return;
             }
 
             // Validación de coincidencia de contraseñas
             if (!password.equals(confirmarPassword)) {
 
-                response.sendRedirect("registro.jsp?msg=error");
+                response.sendRedirect("login.jsp?msg=error");
                 return;
             }
 
             // Obtener conexión a la base de datos
-            Connection conn = ConexionDB.getConnection();
+            Connection conn = conexion.ConexionDB.getConnection();
 
             // Validación de conexión
             if (conn == null) {
@@ -60,7 +59,7 @@ public class RegistroServlet extends HttpServlet {
                 return;
             }
 
-            // Consulta SQL para insertar nuevo usuario
+            // Consulta sql para insertar nuevo usuario
             String sql = "INSERT INTO usuarios(nombre, identificacion, telefono, correo, password) VALUES (?,?,?,?,?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -80,7 +79,7 @@ public class RegistroServlet extends HttpServlet {
             conn.close();
 
             // Redirección en caso de registro exitoso
-            response.sendRedirect("registro.jsp?msg=ok");
+            response.sendRedirect("login.jsp?msg=ok");
 
         } catch (Exception e) {
 
@@ -88,7 +87,7 @@ public class RegistroServlet extends HttpServlet {
             e.printStackTrace();
 
             // Redirección en caso de error
-            response.sendRedirect("registro.jsp?msg=error");
+            response.sendRedirect("login.jsp?msg=usuarioExiste");
         }
     }
 }

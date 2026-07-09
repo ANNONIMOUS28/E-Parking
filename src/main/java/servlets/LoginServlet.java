@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 
@@ -34,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         try {
 
             // Obtener conexión a la base de datos
-            Connection conn = ConexionDB.getConnection();
+            Connection conn = conexion.ConexionDB.getConnection();
 
             // Consulta para validar usuario en la base de datos
             String sql = "SELECT * FROM usuarios WHERE correo=? AND password=?";
