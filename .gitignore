@@ -1,0 +1,32 @@
+# Directorio de compilación de Maven
+target/*
+*.class
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos de configuración de Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# Archivos de configuración de IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Archivos de configuración de NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Archivos del sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -31,17 +31,7 @@
 
         </div>
 
-        <!-- Menú de navegación -->
-        <nav>
 
-            <!-- Botón para regresar a la página principal -->
-            <button type="button" class="btn-volver" onclick="window.location.href='index.jsp'">
-
-                Inicio
-
-            </button>
-
-        </nav>
 
     </header>
 
@@ -72,8 +62,7 @@
             <form action="LoginServlet" method="POST" class="formulario" id="form-login">
 
                 <!-- Contenedor para mostrar mensajes de error -->
-                <div id="mensaje-error" class="mensaje-error">
-                </div>
+                <div id="mensaje-error" class="mensaje-error"><% if (request.getAttribute("error") != null) { %><%= request.getAttribute("error") %><% } %></div>
 
                 <!-- Campo para ingresar el correo electrónico -->
                 <div class="form-campo">
