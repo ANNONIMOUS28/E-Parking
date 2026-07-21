@@ -36,7 +36,7 @@ p.setMetodoPago(rs.getString("metodo_pago"));
 p.setTotal(rs.getDouble("total"));
 p.setEstado(rs.getString("estado"));
 p.setFechaPago(rs.getString("fecha_pago"));
-
+ lista.add(p);
  }
 
  } 

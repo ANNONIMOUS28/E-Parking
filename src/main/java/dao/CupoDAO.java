@@ -45,7 +45,7 @@ public class CupoDAO   {
          //El cupo esta ocupado
 
        }
-
+   lista.add(c);
  }
 }
 

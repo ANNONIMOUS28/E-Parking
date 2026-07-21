@@ -21,7 +21,7 @@ public class ReservasServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
+     HttpServletResponse response)
             throws ServletException, IOException {
 
         // Obtener parámetro nombre del formulario
@@ -55,7 +55,9 @@ public class ReservasServlet extends HttpServlet {
 
         } else {
 
-            // CORRECCIÓN: antes imprimía "fecha", ahora imprime hora correctamente
+        
+        
+     // CORRECCIÓN: antes imprimía "fecha", ahora imprime hora correctamente
             response.getWriter().println("hora: " + hora);
         }
 

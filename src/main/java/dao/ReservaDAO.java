@@ -44,7 +44,7 @@ public class ReservaDAO {
    ("Ocupado".equalsIgnoreCase(r.getEstado())) {
     System.out.println("El cupo esta ocupado");
    }  
- 
+   lista.add(r);
   }
 
    }
