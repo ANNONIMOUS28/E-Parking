@@ -48,9 +48,9 @@ public class HistorialServlet extends HttpServlet {
 
       // Consulta SQL que une el historial  con el vehiculo usando INNER JOIN
        String sql =  "SELECT" + 
-                     "historial.historial_id," +
+                     "historial.vehiculo_id," +
                     " historial.fecha," +
-                     "vehiculos.placa," +
+                     "historial.placa," +
                      "historial.cupo," +
                      "historial.estado" +
                      "FROM historial" +
@@ -74,9 +74,9 @@ public class HistorialServlet extends HttpServlet {
             Historial h= new Historial();
             //Extraemos los datos usando los nombres  exactos  de las columnas  de tu BD
             h.setId(rs.getInt("id"));
-            h. setHistorialId(rs.getInt("historial-id"));
+            h. setVehiculoId(rs.getInt("vehiculo-id"));
             h.setFecha(rs.getString("fecha"));
-            h.setVehiculo(rs.getString("placa"));
+            h.setPlaca(rs.getString("placa"));
             h.setCupo(rs.getString("cupo"));
             h.setEstado(rs.getString("estado"));
             //Lógica  para acumular los valores  de las tarjetas estadisticas del historial

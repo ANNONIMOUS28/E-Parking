@@ -33,9 +33,9 @@ public List<Historial> listaHistorial() {
        // Leer los datos de la tabla de historial
      
        h.setId(rs.getInt("id"));
-       h. setHistorialId(rs.getInt("historial_id"));
+       h. setVehiculoId(rs.getInt("vehiculo_id"));
        h.setFecha(rs.getString("fecha"));
-       h.setVehiculo(rs.getString("vehiculo"));
+       h.setPlaca(rs.getString("placa"));
        h.setCupo(rs.getString("Cupo"));
        h.setEstado(rs.getString("estado"));
        

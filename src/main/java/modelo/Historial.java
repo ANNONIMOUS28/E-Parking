@@ -8,13 +8,13 @@ public class Historial {
    public void setId (int id) {
     this.Id  = id;
    }
-    private int  HistorialId;
-    public int getHistorialId() {
-        return HistorialId;
+    private int  VehiculoId;
+    public int getVehiculoId() {
+        return VehiculoId;
 
     }
-public void setHistorialId (int historialId) {
-    this.HistorialId = historialId;
+public void setVehiculoId (int vehiculoId) {
+    this.VehiculoId = vehiculoId;
 }
 
 private String  Fecha;
@@ -24,12 +24,12 @@ public String getFecha() {
 public void setFecha (String fecha) {
     this.Fecha = fecha;
 }
-private String Vehiculo;
-public String getVehiculo() {
-    return Vehiculo;
+private String Placa;
+public String getPlaca() {
+    return Placa;
 }
-public void setVehiculo (String vehiculo) {
-    this.Vehiculo = vehiculo;
+public void setPlaca (String placa) {
+    this.Placa = placa;
 }
 private String Cupo;
 public String getCupo() {
