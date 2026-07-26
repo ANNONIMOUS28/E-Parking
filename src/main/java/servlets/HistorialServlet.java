@@ -50,7 +50,6 @@ public class HistorialServlet extends HttpServlet {
        String sql =  "SELECT" + 
                      "historial.vehiculo_id," +
                     " historial.fecha," +
-                     "historial.placa," +
                      "historial.cupo," +
                      "historial.estado" +
                      "FROM historial" +
@@ -76,7 +75,6 @@ public class HistorialServlet extends HttpServlet {
             h.setId(rs.getInt("id"));
             h. setVehiculoId(rs.getInt("vehiculo-id"));
             h.setFecha(rs.getString("fecha"));
-            h.setPlaca(rs.getString("placa"));
             h.setCupo(rs.getString("cupo"));
             h.setEstado(rs.getString("estado"));
             //Lógica  para acumular los valores  de las tarjetas estadisticas del historial

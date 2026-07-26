@@ -32,7 +32,7 @@ public class ReservaDAO {
    r.setId(rs.getInt("Id"));
   r.setUsuarioId(rs.getInt("usuario_id"));
   r.setVehiculoId(rs.getInt("vehiculo_id"));
-  r.setCupo(rs.getString("Cupo"));
+  r.setCupoId(rs.getInt("Cupo_id"));
   r.setEstado(rs.getString("Estado"));
   r.setFecha(rs.getString("Fecha"));
   r.setHora(rs.getString("Hora"));
@@ -77,7 +77,7 @@ public class ReservaDAO {
     
     ps. setInt(1, reservas.getUsuarioId());
     ps. setInt(2, reservas.getVehiculoId());
-    ps. setString(3, reservas.getCupo());
+    ps. setInt(3, reservas.getCupoId());
     ps. setString(4, reservas.getEstado());
     ps. setString(5, reservas.getFecha());
     ps. setString(6, reservas.getHora());

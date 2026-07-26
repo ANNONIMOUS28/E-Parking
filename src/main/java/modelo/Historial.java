@@ -24,13 +24,7 @@ public String getFecha() {
 public void setFecha (String fecha) {
     this.Fecha = fecha;
 }
-private String Placa;
-public String getPlaca() {
-    return Placa;
-}
-public void setPlaca (String placa) {
-    this.Placa = placa;
-}
+
 private String Cupo;
 public String getCupo() {
     return Cupo;

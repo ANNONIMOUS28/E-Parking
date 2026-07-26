@@ -22,12 +22,12 @@ public class Reservas {
     public void setVehiculoId(int vehiculoId) {
         this.vehiculoId = vehiculoId;
     }
-    private String Cupo;
-    public String getCupo(){
-        return Cupo;
+    private int CupoId;
+    public int getCupoId(){
+        return CupoId;
     }
-    public void setCupo(String cupo) {
-        this.Cupo = cupo;
+    public void setCupoId(int cupoId) {
+        this.CupoId = cupoId;
     }
     private String Estado;
     public String getEstado() {

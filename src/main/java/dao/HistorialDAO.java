@@ -35,7 +35,6 @@ public List<Historial> listaHistorial() {
        h.setId(rs.getInt("id"));
        h. setVehiculoId(rs.getInt("vehiculo_id"));
        h.setFecha(rs.getString("fecha"));
-       h.setPlaca(rs.getString("placa"));
        h.setCupo(rs.getString("Cupo"));
        h.setEstado(rs.getString("estado"));
        
