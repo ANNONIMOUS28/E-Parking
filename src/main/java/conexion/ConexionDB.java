@@ -34,7 +34,7 @@ public class ConexionDB {
             String url = config.getProperty(
                     "db.url",
                     "jdbc:mysql://localhost:3306/eparking"
-                            + "?useSSL=false&serverTimezone=UTC"
+                            + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
             );
 
             String usuario = config.getProperty("db.user", "root");
