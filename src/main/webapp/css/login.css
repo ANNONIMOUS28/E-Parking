@@ -8,6 +8,18 @@ body {
 
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 /* HEADER */
@@ -27,7 +39,7 @@ body {
     border-radius: 10px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -170,6 +182,8 @@ input {
     padding: 20px;
 
     background-color: white;
+    width: 100%;
+    margin-top: auto;
 }
 
 /* RESPONSIVE */
@@ -182,6 +196,7 @@ input {
         width: 95%;
     }
 }
+
 .mensaje-error {
 
     width: 100%;
@@ -199,8 +214,8 @@ input {
     font-size: 14px;
 
     margin-bottom: 10px;
-}  
-    
+}
 
-
-
+.mensaje-error:empty {
+    display: none;
+}

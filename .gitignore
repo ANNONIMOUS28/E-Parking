@@ -1,9 +1,16 @@
 # Salida de compilación de Maven
 target/
+*.class
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
 # Archivos generados por el sistema
 .DS_Store
 Thumbs.db
+Desktop.ini
 
 # Claves y credenciales
 *.jks
@@ -15,12 +22,21 @@ Thumbs.db
 # conexion.example.properties.
 conexion.properties
 
-# Entornos de desarrollo
+# Archivos de configuración de Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# Archivos de configuración de IntelliJ
 .idea/
 *.iml
-.vscode/
-.settings/
-.classpath
-.project
+*.iws
+
+# Archivos de configuración de NetBeans
 nbproject/private/
-nb-configuration/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
