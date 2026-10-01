@@ -1,0 +1,357 @@
+{
+  "info": {
+    "name": "e-parking (NetBeans)",
+    "description": "API REST y JSPs del proyecto e-parking en NetBeans",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "eaa72a3c-1a2b-4c5d-8e9f-0a1b2c3d4e5f"
+  },
+  "item": [
+    {
+      "name": "Login y Registro",
+      "item": [
+        {
+          "name": "GET /login.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/login.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["login.jsp"]
+            }
+          }
+        },
+        {
+          "name": "POST /LoginServlet",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://127.0.0.1:8080/LoginServlet",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["LoginServlet"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                { "key": "correo", "value": "admin@eparking.com" },
+                { "key": "password", "value": "123456" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /registro.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/registro.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["registro.jsp"]
+            }
+          }
+        },
+        {
+          "name": "POST /RegistroServlet",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://127.0.0.1:8080/RegistroServlet",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["RegistroServlet"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                { "key": "nombre", "value": "Juan" },
+                { "key": "identificacion", "value": "123456" },
+                { "key": "telefono", "value": "3001234567" },
+                { "key": "correo", "value": "juan@email.com" },
+                { "key": "password", "value": "123456" },
+                { "key": "rol", "value": "usuario" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Páginas JSP",
+      "item": [
+        {
+          "name": "GET /menu-principal.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/menu-principal.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["menu-principal.jsp"]
+            }
+          }
+        },
+        {
+          "name": "GET /vehiculos.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/vehiculos.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["vehiculos.jsp"]
+            }
+          }
+        },
+        {
+          "name": "GET /reservas.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/reservas.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["reservas.jsp"]
+            }
+          }
+        },
+        {
+          "name": "GET /pagos.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/pagos.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["pagos.jsp"]
+            }
+          }
+        },
+        {
+          "name": "GET /disponibilidad.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/disponibilidad.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["disponibilidad.jsp"]
+            }
+          }
+        },
+        {
+          "name": "GET /historial.jsp",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/historial.jsp",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["historial.jsp"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "API REST",
+      "item": [
+        {
+          "name": "GET /api/Usuarios",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Usuarios",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Usuarios"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/Usuarios",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Usuarios",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Usuarios"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Juan Pérez\",\n  \"identificacion\": \"1234567890\",\n  \"telefono\": \"3001234567\",\n  \"correo\": \"juan@email.com\",\n  \"password\": \"123456\",\n  \"rol\": \"usuario\",\n  \"fechaRegistro\": \"2026-07-08\"\n}"
+            }
+          }
+        },
+        {
+          "name": "GET /api/Vehiculos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Vehiculos",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Vehiculos"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/Vehiculos",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Vehiculos",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Vehiculos"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placa\": \"ABC-123\",\n  \"tipo\": \"Moto\",\n  \"color\": \"Rojo\",\n  \"propietario\": \"Juan Pérez\",\n  \"usuarioId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "GET /api/Reservas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Reservas",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Reservas"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/Reservas",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Reservas",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Reservas"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"vehiculoId\": 1,\n  \"cupo\": \"A1\",\n  \"estado\": \"activa\",\n  \"fecha\": \"2026-07-08\",\n  \"hora\": \"14:30\"\n}"
+            }
+          }
+        },
+        {
+          "name": "GET /api/Pagos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Pagos",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Pagos"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/Pagos",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Pagos",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Pagos"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reservaId\": 1,\n  \"metodoPago\": \"Efectivo\",\n  \"total\": 5000,\n  \"estado\": \"pagado\",\n  \"fechaPago\": \"2026-07-08\"\n}"
+            }
+          }
+        },
+        {
+          "name": "GET /api/Historial",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Historial",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Historial"]
+            }
+          }
+        },
+        {
+          "name": "GET /api/Cupos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Cupos",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Cupos"]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/Cupos",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/Cupos",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8080",
+              "path": ["api", "Cupos"]
+            },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"codigo\": \"A1\",\n  \"estado\": \"ocupado\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,13 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
+
+import conexion.ConexionDB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 
@@ -18,10 +24,13 @@ public class PagoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
+    //Lista para almacenar los pagos de los usuarios
+     ArrayList<PagoServlet> listaPagos = new ArrayList<>();
+
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response)
-            throws ServletException, IOException {
+     throws ServletException, IOException {
 
         // Permitir caracteres especiales en la petición
         request.setCharacterEncoding("UTF-8");
@@ -65,5 +74,35 @@ public class PagoServlet extends HttpServlet {
         response.setContentType("text/plain");
 
         response.getWriter().write("PAGO EXITOSO");
+     
+       //Consultar y mostrar en sql los pagos realizados por el usuario
+       String sql = "SELECT* FROM pagos";
+        //Conexion con la base de datos
+       try 
+       (Connection conn = 
+       ConexionDB.getConnection();
+       PreparedStatement ps =conn.prepareStatement(sql)
+    ) {
+
+        //Ejecutar consulta
+        try
+        (ResultSet rs = ps.executeQuery()) {
+
+      while (rs.next()) {  
+      
+      
+    }
+
+     } 
+    } catch (Exception e) {
+        System.out.println("Error al consultar los pagos");
+        e.printStackTrace();
+     }
+    
+       return;
+
+
+
     }
 }
+     

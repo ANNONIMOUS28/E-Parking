@@ -1,5 +1,4 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -120,9 +119,10 @@
                 <thead>
 
                     <tr>
-
+                         <th>Id</th>
+                         <th>Historial_id</th>
                         <th>Fecha</th>
-                        <th>Vehículo</th>
+                        <th>Vehiculo</th>
                         <th>Espacio</th>
                         <th>Estado</th>
 
@@ -130,26 +130,31 @@
 
                 </thead>
 
-                <!-- Cuerpo de la tabla con los registros -->
+<!-- Cuerpo de la tabla con los registros -->
                 <tbody id="tablaHistorial">
-
-                    <!-- Registro de reserva activa -->
+                    <%
+                    // 1. Recuperamos la lista que envio el Servlet
+                    java.util.List<modelo.Historial> lista = (java.util.List<modelo.Historial>) request.getAttribute("listaHistorial");
+                    if (lista != null && !lista.isEmpty()) {
+                            for (modelo.Historial h : lista) {
+                    %>
                     <tr>
-
-                        <td>12/05/2026</td>
-                        <td>ABC123</td>
-                        <td>A-12</td>
-                        <td class="estado-activa">
-
-                            Activa
-
-                        </td>
-
+                            <td><%= h.getId() %></td>
+                            <td><%= h.getHistorialId() %></td>
+                            <td><%= h.getFecha() %></td>
+                            <td><%= h.getVehiculo() %></td>
+                            <td><%= h.getCupo() %></td>
+                            <td class="estado-activa"><%= h.getEstado() %></td>
                     </tr>
+                    <%
+                            }
+                    }
+                    %>
 
                     <!-- Registro de reserva finalizada -->
                     <tr>
-
+                         <td>2</td>
+                         <td>2</td>
                         <td>10/05/2026</td>
                         <td>XYZ789</td>
                         <td>B-05</td>

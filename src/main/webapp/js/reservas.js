@@ -29,7 +29,7 @@ document.getElementById('formulario-reserva');
 btnVolver.addEventListener('click', function () {
 
     window.location.href =
-    'disponibilidad.html';
+    'menu-principal.jsp';
 
 });
 

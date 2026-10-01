@@ -1,0 +1,16 @@
+# Normaliza los finales de linea en el repositorio.
+#
+# Los archivos se versionan con LF aunque en el equipo esten con CRLF
+# (por ejemplo si se editaron en Windows). Asi el diff muestra los
+# cambios reales y no el cambio de una sola linea de terminacion.
+* text=auto eol=lf
+
+# Los archivos binarios no se tocan
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.jar binary
+*.war binary
+*.class binary

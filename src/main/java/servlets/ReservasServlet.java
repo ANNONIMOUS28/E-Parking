@@ -1,7 +1,11 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
+import conexion.ConexionDB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 
@@ -54,5 +58,39 @@ public class ReservasServlet extends HttpServlet {
             // CORRECCIÓN: antes imprimía "fecha", ahora imprime hora correctamente
             response.getWriter().println("hora: " + hora);
         }
+
+        //Consultar la tabla de reservas en sql
+        String  sql =  "SELECT* FROM  reservas";
+
+     //Conexión con la base de datos
+
+     try(
+    Connection conn =
+    ConexionDB.getConnection();
+    PreparedStatement  ps=conn.prepareStatement(sql)
+   ) {
+      // Ejecutar la consulta
+    try
+    (ResultSet rs  =ps . executeQuery()) {
+
+   while  (rs.next()) {
+   // Leer los datos de la tabla de reservas
+   }  
+ 
+  }
+     //Imprimir el error en caso de que no se pueda consultar la reserva
+   } catch (Exception e) {
+     System.out.println("Error al consultar la reaserva"); 
+     e.printStackTrace(); 
     }
+     
+      
+    }
+
 }
+
+
+ 
+
+
+    

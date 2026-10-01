@@ -1,0 +1,22 @@
+# Salida de compilación de Maven
+target/
+
+# Archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Claves y credenciales
+*.jks
+*.keystore
+*.p12
+*.properties.local
+
+# Entornos de desarrollo
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+nbproject/private/
+nb-configuration/
